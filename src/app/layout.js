@@ -1,4 +1,3 @@
-'use client';
 import UserContext from './contexts/UserContext';
 import Header from './components/Header';
 import './globals.css';

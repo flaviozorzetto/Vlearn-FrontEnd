@@ -1,3 +1,5 @@
+'use client';
+
 import { useContext } from 'react';
 import { CurrentUserContext } from '../contexts/UserContext';
 import Link from 'next/link';
