@@ -13,12 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<UserContext>
-				<body className={'bg-slate-950 min-h-full ' + inter.className}>
+			<body className={'bg-slate-950 min-h-full ' + inter.className}>
+				<UserContext>
 					<Header />
 					{children}
-				</body>
-			</UserContext>
+				</UserContext>
+			</body>
 		</html>
 	);
 }

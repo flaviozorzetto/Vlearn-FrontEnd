@@ -1,12 +1,14 @@
 'use client';
-
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import Cookies from 'js-cookies';
 
-export const CurrentUserContext = createContext(null);
+export const CurrentUserContext = createContext(undefined);
 
 export default function UserContext(props) {
-	const [user, setUser] = useState(JSON.parse(Cookies.getItem('user')));
+	const [user, setUser] = useState(undefined);
+	useEffect(() => {
+		setUser(JSON.parse(Cookies.getItem('user')));
+	}, []);
 
 	const providerObject = {
 		user,
@@ -14,8 +16,10 @@ export default function UserContext(props) {
 	};
 
 	return (
-		<CurrentUserContext.Provider value={providerObject}>
-			{props.children}
-		</CurrentUserContext.Provider>
+		<>
+			<CurrentUserContext.Provider value={providerObject}>
+				{props.children}
+			</CurrentUserContext.Provider>
+		</>
 	);
 }
