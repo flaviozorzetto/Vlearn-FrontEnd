@@ -18,7 +18,8 @@ export default function Cadastrar() {
 				headers: { 'Content-Type': 'application/json' },
 			}
 		);
-		if (res.status == 201) {
+
+		if (res.status == 200) {
 			setMessageObj(messageObj => ({
 				...messageObj,
 				message: 'Cadastrado com sucesso',
