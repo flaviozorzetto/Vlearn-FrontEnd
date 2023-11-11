@@ -11,7 +11,7 @@ export default function Cadastrar() {
 	async function submitHandler(formData) {
 		setMessageObj({ ...messageObj, ok: false, show: false });
 		const res = await fetch(
-			'https://vlearn-api.azurewebsites.net/vlearn/login',
+			'https://vlearnbackend220231110213553.azurewebsites.net/login',
 			{
 				method: 'POST',
 				body: JSON.stringify(Object.fromEntries(formData)),
@@ -60,7 +60,13 @@ export default function Cadastrar() {
 					></input>
 				</div>
 				{messageObj.show && (
-					<p className={messageObj.ok ? 'text-green-600 font-bold' : 'text-red-800 font-bold'}>
+					<p
+						className={
+							messageObj.ok
+								? 'text-green-600 font-bold'
+								: 'text-red-800 font-bold'
+						}
+					>
 						{messageObj.ok
 							? messageObj.message
 							: 'Não foi possivel realizar o cadastro'}

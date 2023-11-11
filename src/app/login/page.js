@@ -19,7 +19,7 @@ export default function Login() {
 
 		try {
 			const res = await fetch(
-				'https://vlearn-api.azurewebsites.net/vlearn/login',
+				'https://vlearnbackend220231110213553.azurewebsites.net/login',
 				{ method: 'GET' }
 			);
 			const data = await res.json();
